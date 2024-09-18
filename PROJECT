@@ -7,4 +7,19 @@ layout:
 - go.kubebuilder.io/v4
 projectName: kb-test
 repo: kb-test
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: my.domain
+  group: batch
+  kind: CronJob
+  path: kb-test/api/v1
+  version: v1
+  webhooks:
+    conversion: true
+    defaulting: true
+    validation: true
+    webhookVersion: v1
 version: "3"
